@@ -1,0 +1,2 @@
+export const FETCH_USERS = 'USERS/FETCH';
+export const FETCH_USERS_SUCCESS = 'USERS/FETCH_SUCCESS';
