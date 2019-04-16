@@ -4,7 +4,7 @@ import { FETCH_USERS } from './events';
 
 import { getUsers } from '../../api/users';
 
-function* fetchUsers() {
+export function* fetchUsers() {
     try {
         const users = yield call(getUsers);
         yield put(onFetchUsersSucess(users));
@@ -13,8 +13,6 @@ function* fetchUsers() {
     }
 }
 
-function* mySaga() {
+export function* watchFetchUsers() {
     yield takeEvery(FETCH_USERS, fetchUsers);
 }
-
-export default mySaga;

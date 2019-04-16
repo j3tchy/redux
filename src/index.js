@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import createSagaMiddleware from 'redux-saga';
-import mySaga from './Users/redux/sagas';
+import { watchFetchUsers } from './Users/redux/sagas';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -22,7 +22,7 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(sagaMiddleware)),
 );
 
-sagaMiddleware.run(mySaga);
+sagaMiddleware.run(watchFetchUsers);
 
 ReactDOM.render(
     <Provider store={store}>
